@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.armando.prj_clinicahospitalarfx.HomePageController">
+   <children>
+      <MenuBar>
+        <menus>
+          <Menu mnemonicParsing="false" text="Gerenciar">
+            <items>
+              <MenuItem fx:id="menuItemGerenciarPacientes" mnemonicParsing="false" onAction="#switchToPacientes" text="Pacientes" />
+                  <MenuItem fx:id="menuItemGerenciarMedicos" mnemonicParsing="false" onAction="#switchToMedicos" text="Médicos" />
+                  <MenuItem fx:id="menuItemGerenciarEnfermeiros" mnemonicParsing="false" onAction="#switchToEnfermeiros" text="Enfermeiros" />
+                  <MenuItem fx:id="menuItemGerenciarConsultas" mnemonicParsing="false" onAction="#switchToConsultas" text="Consultas" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Importar">
+            <items>
+              <MenuItem fx:id="menuItemImportarExcel" mnemonicParsing="false" onAction="#switchToExcel" text="Excel" />
+                  <MenuItem fx:id="menuItemImportarXML" mnemonicParsing="false" text="XML" />
+                  <MenuItem fx:id="menuItemImportarJSON" mnemonicParsing="false" text="JSON" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Exportar">
+            <items>
+              <MenuItem fx:id="menuItemExportarExcel" mnemonicParsing="false" text="Excel" />
+                  <MenuItem fx:id="menuItemExportarXML" mnemonicParsing="false" text="XML" />
+                  <MenuItem fx:id="menuItemExportarJSON" mnemonicParsing="false" text="JSON" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+      <AnchorPane fx:id="AnchorPane" prefHeight="431.0" prefWidth="600.0" />
+   </children>
+</VBox>

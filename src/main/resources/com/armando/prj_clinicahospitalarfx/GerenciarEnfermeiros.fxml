@@ -1,0 +1,423 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.armando.prj_clinicahospitalarfx.GerenciarEnfermeirosController">
+   <children>
+      <TabPane prefHeight="400.0" prefWidth="800.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <tabs>
+          <Tab text="Cadastrar">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TitledPane alignment="CENTER" animated="false" collapsible="false" contentDisplay="CENTER" prefHeight="369.0" prefWidth="800.0" text="Cadastrar Enfermeiro" textAlignment="CENTER" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <font>
+                              <Font name="System Bold" size="13.0" />
+                           </font>
+                           <content>
+                              <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+                                 <children>
+                                    <Pane prefHeight="200.0" prefWidth="200.0">
+                                       <children>
+                                          <TextField fx:id="txtNome1" layoutY="35.0" prefHeight="25.0" prefWidth="200.0" promptText="Nome completo">
+                                             <font>
+                                                <Font size="12.0" />
+                                             </font>
+                                          </TextField>
+                                          <Label layoutX="214.0" layoutY="15.0" text="Data de nascimento:">
+                                             <font>
+                                                <Font name="System Bold" size="12.0" />
+                                             </font>
+                                          </Label>
+                                          <DatePicker fx:id="dtNascimento1" layoutX="214.0" layoutY="35.0" prefHeight="10.0" prefWidth="150.0" promptText="Data" />
+                                          <Label layoutX="379.0" layoutY="15.0" text="Setor:">
+                                             <font>
+                                                <Font name="System Bold" size="12.0" />
+                                             </font>
+                                          </Label>
+                                          <TextField fx:id="txtSetor1" layoutX="379.0" layoutY="35.0" prefHeight="25.0" prefWidth="150.0" promptText="Setor">
+                                             <font>
+                                                <Font size="12.0" />
+                                             </font>
+                                          </TextField>
+                                          <Label layoutX="546.0" layoutY="15.0" text="Carga Horária:">
+                                             <font>
+                                                <Font name="System Bold" size="12.0" />
+                                             </font>
+                                          </Label>
+                                          <TextField fx:id="txtCH1" layoutX="546.0" layoutY="35.0" prefHeight="25.0" prefWidth="100.0" promptText="Carga Horária">
+                                             <font>
+                                                <Font size="12.0" />
+                                             </font>
+                                          </TextField>
+                                          <Label layoutX="657.0" layoutY="15.0" text="Treinado Op RX?">
+                                             <font>
+                                                <Font name="System Bold" size="12.0" />
+                                             </font>
+                                          </Label>
+                                          <RadioButton fx:id="rdSim1" layoutX="661.0" layoutY="35.0" mnemonicParsing="false" text="Sim">
+                                             <toggleGroup>
+                                                <ToggleGroup fx:id="grupoOPRX1" />
+                                             </toggleGroup>
+                                          </RadioButton>
+                                          <RadioButton fx:id="rdNao1" layoutX="715.0" layoutY="35.0" mnemonicParsing="false" text="Não" toggleGroup="$grupoOPRX1" />
+                                          <Label layoutY="15.0" text="Nome completo:">
+                                             <font>
+                                                <Font name="System Bold" size="12.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                    </Pane>
+                                    <Pane prefHeight="200.0" prefWidth="200.0">
+                                       <children>
+                                          <Label layoutY="15.0" text="Rua:">
+                                             <font>
+                                                <Font name="System Bold" size="12.0" />
+                                             </font>
+                                          </Label>
+                                          <TextField fx:id="txtRua1" layoutY="35.0" prefHeight="25.0" prefWidth="150.0" promptText="Rua">
+                                             <font>
+                                                <Font size="12.0" />
+                                             </font>
+                                          </TextField>
+                                          <Label layoutX="162.0" layoutY="15.0" text="Número:">
+                                             <font>
+                                                <Font name="System Bold" size="12.0" />
+                                             </font>
+                                          </Label>
+                                          <TextField fx:id="txtNumero1" layoutX="162.0" layoutY="35.0" prefHeight="25.0" prefWidth="100.0" promptText="Número">
+                                             <font>
+                                                <Font size="12.0" />
+                                             </font>
+                                          </TextField>
+                                          <Label layoutX="273.0" layoutY="15.0" text="Bairro:">
+                                             <font>
+                                                <Font name="System Bold" size="12.0" />
+                                             </font>
+                                          </Label>
+                                          <TextField fx:id="txtBairro1" layoutX="273.0" layoutY="35.0" prefHeight="25.0" prefWidth="100.0" promptText="Bairro">
+                                             <font>
+                                                <Font size="12.0" />
+                                             </font>
+                                          </TextField>
+                                          <Label layoutX="384.0" layoutY="15.0" text="Cidade:">
+                                             <font>
+                                                <Font name="System Bold" size="12.0" />
+                                             </font>
+                                          </Label>
+                                          <TextField fx:id="txtCidade1" layoutX="384.0" layoutY="35.0" prefHeight="25.0" prefWidth="150.0" promptText="Cidade">
+                                             <font>
+                                                <Font size="12.0" />
+                                             </font>
+                                          </TextField>
+                                          <Label layoutX="548.0" layoutY="15.0" text="Estado:">
+                                             <font>
+                                                <Font name="System Bold" size="12.0" />
+                                             </font>
+                                          </Label>
+                                          <TextField fx:id="txtEstado1" layoutX="548.0" layoutY="35.0" prefHeight="25.0" prefWidth="100.0" promptText="Estado">
+                                             <font>
+                                                <Font size="12.0" />
+                                             </font>
+                                          </TextField>
+                                          <Label layoutX="664.0" layoutY="15.0" text="CEP:">
+                                             <font>
+                                                <Font name="System Bold" size="12.0" />
+                                             </font>
+                                          </Label>
+                                          <TextField fx:id="txtCEP1" layoutX="664.0" layoutY="35.0" prefHeight="25.0" prefWidth="112.0" promptText="CEP">
+                                             <font>
+                                                <Font size="12.0" />
+                                             </font>
+                                          </TextField>
+                                       </children>
+                                    </Pane>
+                                    <Pane prefHeight="200.0" prefWidth="200.0">
+                                       <children>
+                                          <Label layoutY="15.0" text="Telefone:">
+                                             <font>
+                                                <Font name="System Bold" size="12.0" />
+                                             </font>
+                                          </Label>
+                                          <TextField fx:id="txtTelefone1" layoutY="35.0" prefHeight="25.0" prefWidth="200.0" promptText="Telefone">
+                                             <font>
+                                                <Font size="12.0" />
+                                             </font>
+                                          </TextField>
+                                          <Label layoutX="217.0" layoutY="15.0" text="Celular:">
+                                             <font>
+                                                <Font name="System Bold" size="12.0" />
+                                             </font>
+                                          </Label>
+                                          <TextField fx:id="txtCelular1" layoutX="217.0" layoutY="35.0" prefHeight="25.0" prefWidth="200.0" promptText="Celular">
+                                             <font>
+                                                <Font size="12.0" />
+                                             </font>
+                                          </TextField>
+                                          <Label layoutX="432.0" layoutY="15.0" text="Email:">
+                                             <font>
+                                                <Font name="System Bold" size="12.0" />
+                                             </font>
+                                          </Label>
+                                          <TextField fx:id="txtEmail1" layoutX="432.0" layoutY="35.0" prefHeight="25.0" prefWidth="200.0" promptText="Email">
+                                             <font>
+                                                <Font size="12.0" />
+                                             </font>
+                                          </TextField>
+                                          <Label layoutX="654.0" layoutY="15.0" text="Gênero:">
+                                             <font>
+                                                <Font name="System Bold" size="12.0" />
+                                             </font>
+                                          </Label>
+                                          <RadioButton fx:id="rdMasc1" layoutX="658.0" layoutY="35.0" mnemonicParsing="false" text="M">
+                                             <toggleGroup>
+                                                <ToggleGroup fx:id="grupoGenero1" />
+                                             </toggleGroup>
+                                          </RadioButton>
+                                          <RadioButton fx:id="rdFem1" layoutX="712.0" layoutY="35.0" mnemonicParsing="false" text="F" toggleGroup="$grupoGenero1" />
+                                       </children>
+                                    </Pane>
+                                    <Pane prefHeight="200.0" prefWidth="200.0">
+                                       <children>
+                                          <Button layoutX="224.0" layoutY="33.0" mnemonicParsing="false" onAction="#switchToHomePage" prefWidth="100.0" text="Voltar" />
+                                          <Button layoutX="339.0" layoutY="33.0" mnemonicParsing="false" onAction="#cadastrarEnfermeiro" prefWidth="100.0" text="Cadastrar" />
+                                          <Button layoutX="454.0" layoutY="33.0" mnemonicParsing="false" onAction="#clearFieldsCadastrar" prefWidth="100.0" text="Limpar" />
+                                       </children>
+                                    </Pane>
+                                 </children>
+                              </VBox>
+                           </content>
+                        </TitledPane>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+          <Tab text="Gerenciar">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <SplitPane dividerPositions="0.2506265664160401" prefHeight="369.0" prefWidth="800.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <items>
+                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                                 <children>
+                                    <Pane layoutX="-1.0" layoutY="47.0" prefHeight="200.0" prefWidth="200.0">
+                                       <children>
+                                          <ComboBox fx:id="cmbEnfermeiros" layoutX="25.0" layoutY="87.0" onAction="#onChangeCombo" prefWidth="150.0" />
+                                          <Label layoutX="22.0" layoutY="58.0" text="Selecione o enfermeiro:">
+                                             <font>
+                                                <Font name="System Bold" size="14.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                    </Pane>
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                                 <children>
+                                    <TitledPane alignment="CENTER" animated="false" collapsible="false" contentDisplay="CENTER" layoutX="126.0" layoutY="91.0" prefHeight="598.0" prefWidth="557.0" text="Detalhes do Enfermeiro" textAlignment="CENTER" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                       <font>
+                                          <Font name="System Bold" size="13.0" />
+                                       </font>
+                                       <content>
+                                          <VBox prefHeight="200.0" prefWidth="100.0">
+                                             <children>
+                                                <Pane prefHeight="200.0" prefWidth="200.0">
+                                                   <children>
+                                                      <Label layoutY="5.0" text="Nome completo:">
+                                                         <font>
+                                                            <Font name="System Bold" size="12.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <TextField fx:id="txtNome" layoutY="24.0" prefHeight="25.0" prefWidth="330.0" promptText="Nome completo">
+                                                         <font>
+                                                            <Font size="12.0" />
+                                                         </font>
+                                                      </TextField>
+                                                      <Label layoutX="345.0" layoutY="5.0" text="Data de nascimento:">
+                                                         <font>
+                                                            <Font name="System Bold" size="12.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <DatePicker fx:id="dtNascimento" layoutX="345.0" layoutY="24.0" prefHeight="27.0" prefWidth="228.0" promptText="Data" />
+                                                   </children>
+                                                </Pane>
+                                                <Pane prefHeight="200.0" prefWidth="200.0">
+                                                   <children>
+                                                      <Label layoutY="5.0" text="Setor:">
+                                                         <font>
+                                                            <Font name="System Bold" size="12.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <TextField fx:id="txtSetor" layoutY="24.0" prefWidth="200.0" promptText="Setor">
+                                                         <font>
+                                                            <Font size="12.0" />
+                                                         </font>
+                                                      </TextField>
+                                                      <Label layoutX="213.0" layoutY="6.0" text="Carga Horária:">
+                                                         <font>
+                                                            <Font name="System Bold" size="12.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <TextField fx:id="txtCH" layoutX="213.0" layoutY="24.0" prefHeight="25.0" prefWidth="200.0" promptText="Carga Horária">
+                                                         <font>
+                                                            <Font size="12.0" />
+                                                         </font>
+                                                      </TextField>
+                                                      <Label layoutX="431.0" layoutY="5.0" text="Treinado Op RX?">
+                                                         <font>
+                                                            <Font name="System Bold" size="12.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <RadioButton fx:id="rdSim" layoutX="431.0" layoutY="27.0" mnemonicParsing="false" text="Sim">
+                                                         <toggleGroup>
+                                                            <ToggleGroup fx:id="grupoOPRX" />
+                                                         </toggleGroup>
+                                                      </RadioButton>
+                                                      <RadioButton fx:id="rdNao" layoutX="489.0" layoutY="27.0" mnemonicParsing="false" text="Não" toggleGroup="$grupoOPRX" />
+                                                   </children>
+                                                </Pane>
+                                                <Pane prefHeight="200.0" prefWidth="200.0">
+                                                   <children>
+                                                      <Label text="Rua:">
+                                                         <font>
+                                                            <Font name="System Bold" size="12.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <TextField fx:id="txtRua" layoutY="19.0" prefHeight="25.0" prefWidth="94.0" promptText="Rua">
+                                                         <font>
+                                                            <Font size="12.0" />
+                                                         </font>
+                                                      </TextField>
+                                                      <Label layoutX="107.0" text="Número:">
+                                                         <font>
+                                                            <Font name="System Bold" size="12.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <TextField fx:id="txtNumero" layoutX="107.0" layoutY="19.0" prefHeight="25.0" prefWidth="62.0" promptText="Número">
+                                                         <font>
+                                                            <Font size="12.0" />
+                                                         </font>
+                                                      </TextField>
+                                                      <Label layoutX="180.0" text="Bairro:">
+                                                         <font>
+                                                            <Font name="System Bold" size="12.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <TextField fx:id="txtBairro" layoutX="180.0" layoutY="19.0" prefHeight="25.0" prefWidth="94.0" promptText="Bairro">
+                                                         <font>
+                                                            <Font size="12.0" />
+                                                         </font>
+                                                      </TextField>
+                                                      <Label layoutX="287.0" text="Cidade:">
+                                                         <font>
+                                                            <Font name="System Bold" size="12.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <TextField fx:id="txtCidade" layoutX="287.0" layoutY="19.0" prefHeight="25.0" prefWidth="94.0" promptText="Cidade">
+                                                         <font>
+                                                            <Font size="12.0" />
+                                                         </font>
+                                                      </TextField>
+                                                      <Label layoutX="391.0" text="Estado:">
+                                                         <font>
+                                                            <Font name="System Bold" size="12.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <TextField fx:id="txtEstado" layoutX="391.0" layoutY="19.0" prefHeight="25.0" prefWidth="94.0" promptText="Estado">
+                                                         <font>
+                                                            <Font size="12.0" />
+                                                         </font>
+                                                      </TextField>
+                                                      <Label layoutX="493.0" text="CEP:">
+                                                         <font>
+                                                            <Font name="System Bold" size="12.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <TextField fx:id="txtCEP" layoutX="493.0" layoutY="19.0" prefHeight="25.0" prefWidth="81.0" promptText="CEP">
+                                                         <font>
+                                                            <Font size="12.0" />
+                                                         </font>
+                                                      </TextField>
+                                                   </children>
+                                                </Pane>
+                                                <Pane prefHeight="200.0" prefWidth="200.0">
+                                                   <children>
+                                                      <Label text="Telefone:">
+                                                         <font>
+                                                            <Font name="System Bold" size="12.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <TextField fx:id="txtTelefone" layoutY="19.0" prefHeight="25.0" prefWidth="120.0" promptText="Telefone">
+                                                         <font>
+                                                            <Font size="12.0" />
+                                                         </font>
+                                                      </TextField>
+                                                      <Label layoutX="132.0" text="Celular:">
+                                                         <font>
+                                                            <Font name="System Bold" size="12.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <TextField fx:id="txtCelular" layoutX="132.0" layoutY="19.0" prefHeight="25.0" prefWidth="120.0" promptText="Celular">
+                                                         <font>
+                                                            <Font size="12.0" />
+                                                         </font>
+                                                      </TextField>
+                                                      <Label layoutX="264.0" text="Email:">
+                                                         <font>
+                                                            <Font name="System Bold" size="12.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <TextField fx:id="txtEmail" layoutX="264.0" layoutY="19.0" prefHeight="25.0" prefWidth="190.0" promptText="Email">
+                                                         <font>
+                                                            <Font size="12.0" />
+                                                         </font>
+                                                      </TextField>
+                                                      <Label layoutX="470.0" layoutY="-1.0" text="Gênero:">
+                                                         <font>
+                                                            <Font name="System Bold" size="12.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <RadioButton fx:id="rdMasc" layoutX="474.0" layoutY="21.0" mnemonicParsing="false" text="M">
+                                                         <toggleGroup>
+                                                            <ToggleGroup fx:id="grupoGenero" />
+                                                         </toggleGroup></RadioButton>
+                                                      <RadioButton fx:id="rdFem" layoutX="528.0" layoutY="21.0" mnemonicParsing="false" text="F" toggleGroup="$grupoGenero" />
+                                                   </children>
+                                                </Pane>
+                                                <Pane prefHeight="200.0" prefWidth="200.0">
+                                                   <children>
+                                                      <Button layoutX="122.0" layoutY="35.0" mnemonicParsing="false" onAction="#switchToHomePage" prefWidth="100.0" text="Voltar" />
+                                                      <Button layoutX="237.0" layoutY="35.0" mnemonicParsing="false" onAction="#salvarEnfermeiro" prefWidth="100.0" text="Salvar" />
+                                                      <Button layoutX="352.0" layoutY="35.0" mnemonicParsing="false" onAction="#deletarEnfermeiro" prefWidth="100.0" text="Remover" />
+                                                   </children>
+                                                </Pane>
+                                             </children>
+                                          </VBox>
+                                       </content>
+                                    </TitledPane>
+                                 </children>
+                              </AnchorPane>
+                           </items>
+                        </SplitPane>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+        </tabs>
+      </TabPane>
+   </children>
+</AnchorPane>
