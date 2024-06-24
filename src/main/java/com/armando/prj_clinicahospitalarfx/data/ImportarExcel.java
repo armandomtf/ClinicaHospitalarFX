@@ -1,5 +1,6 @@
 package com.armando.prj_clinicahospitalarfx.data;
 
+import com.armando.prj_clinicahospitalarfx.HomePageController;
 import com.armando.prj_clinicahospitalarfx.model.ConsultaMedica;
 import com.armando.prj_clinicahospitalarfx.model.ContatoTelEmail;
 import com.armando.prj_clinicahospitalarfx.model.Endereco;
@@ -23,10 +24,15 @@ public class ImportarExcel {
 
     public void ReadDataFromExcel(String path) {
 
+        HomePageController.pacientes = new ArrayList<>();
+        HomePageController.medicos = new ArrayList<>();
+        HomePageController.enfermeiros = new ArrayList<>();
+        HomePageController.consultas = new ArrayList<>();
+
         try {
             //XSSFWorkbook workbook = new XSSFWorkbook(path);
             XSSFWorkbook workbook = new XSSFWorkbook("C:\\Users\\Armando\\Desktop\\Video.xlsx");
-            
+
             //Abre aba Pacientes
             Sheet sheet = workbook.getSheetAt(0);
 

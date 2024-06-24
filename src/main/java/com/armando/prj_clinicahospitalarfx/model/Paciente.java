@@ -9,19 +9,16 @@ import java.util.Date;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 
-/**
- *
- * @author Armando
- */
-@XmlRootElement(name = "paciente")
 public class Paciente extends DadoPessoal {
+
+    public Paciente() {
+    }
 
     @Override
     public String toString() {
         return getNomeCompleto();
     }
 
-    @XmlElement
     public Long getIdPaciente() {
         return idPaciente;
     }
@@ -30,7 +27,6 @@ public class Paciente extends DadoPessoal {
         this.idPaciente = idPaciente;
     }
 
-    @XmlElement
     public int getIdade() {
         return idade;
     }
@@ -39,7 +35,6 @@ public class Paciente extends DadoPessoal {
         this.idade = idade;
     }
 
-    @XmlElement
     public Date getDataCadastro() {
         return dataCadastro;
     }
@@ -48,7 +43,6 @@ public class Paciente extends DadoPessoal {
         this.dataCadastro = dataCadastro;
     }
 
-    @XmlElement
     public String getObsGeral() {
         return obsGeral;
     }
@@ -57,7 +51,6 @@ public class Paciente extends DadoPessoal {
         this.obsGeral = obsGeral;
     }
 
-    @XmlElement
     public ArrayList<ConsultaMedica> getHistoricoConsultasMedicas() {
         return historicoConsultasMedicas;
     }
@@ -66,7 +59,6 @@ public class Paciente extends DadoPessoal {
         this.historicoConsultasMedicas = historicoConsultasMedicas;
     }
 
-    @XmlElement
     public Responsavel getContatoResponsavel() {
         return contatoResponsavel;
     }

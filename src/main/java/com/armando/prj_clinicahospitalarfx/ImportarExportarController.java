@@ -10,7 +10,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
 import javafx.scene.control.TextField;
 
-public class ExcelController implements Initializable {
+public class ImportarExportarController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {

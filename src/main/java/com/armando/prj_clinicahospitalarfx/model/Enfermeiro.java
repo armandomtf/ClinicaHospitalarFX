@@ -1,16 +1,11 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package com.armando.prj_clinicahospitalarfx.model;
 
 import java.util.Date;
 
-/**
- *
- * @author Armando
- */
 public class Enfermeiro extends AtendenteHospitalar {
+
+    public Enfermeiro() {
+    }
 
     @Override
     public String toString() {

@@ -10,7 +10,10 @@ import java.util.Date;
  *
  * @author Armando
  */
-public class AtendenteHospitalar extends DadoPessoal{
+public class AtendenteHospitalar extends DadoPessoal {
+
+    public AtendenteHospitalar() {
+    }
 
     public String getSetor() {
         return setor;
@@ -35,8 +38,7 @@ public class AtendenteHospitalar extends DadoPessoal{
         this.chSemanal = chSemanal;
     }
 
-
     private String setor;
     private int chSemanal;
-    
+
 }

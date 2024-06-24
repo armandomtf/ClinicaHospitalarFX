@@ -12,6 +12,9 @@ import java.util.Date;
  */
 public class DadoPessoal {
 
+    public DadoPessoal() {
+    }
+
     public String getNomeCompleto() {
         return nomeCompleto;
     }
@@ -60,13 +63,11 @@ public class DadoPessoal {
         this.contato = contato;
         this.genero = genero;
     }
-    
-    
+
     private String nomeCompleto;
     private Date dataNascimento;
     private Endereco endereco;
     private ContatoTelEmail contato;
     private Genero genero;
-       
-    
+
 }

@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.armando.prj_clinicahospitalarfx.ExcelController">
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.armando.prj_clinicahospitalarfx.ImportarExportarController">
    <children>
       <SplitPane dividerPositions="0.5" layoutX="10.0" layoutY="10.0" prefHeight="369.0" prefWidth="800.0">
          <items>

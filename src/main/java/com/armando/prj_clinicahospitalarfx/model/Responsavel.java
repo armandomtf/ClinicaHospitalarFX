@@ -10,6 +10,9 @@ package com.armando.prj_clinicahospitalarfx.model;
  */
 public class Responsavel extends ContatoTelEmail {
 
+    public Responsavel() {
+    }
+
     @Override
     public String toString() {
         return getNomeResponsavel();

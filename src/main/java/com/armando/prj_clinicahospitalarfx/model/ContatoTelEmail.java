@@ -10,6 +10,9 @@ package com.armando.prj_clinicahospitalarfx.model;
  */
 public class ContatoTelEmail {
 
+    public ContatoTelEmail() {
+    }
+
     public String getTelefone() {
         return telefone;
     }
@@ -40,8 +43,6 @@ public class ContatoTelEmail {
         this.celular = celular;
         this.email = email;
     }
-    
-
 
     private String telefone;
     private String celular;

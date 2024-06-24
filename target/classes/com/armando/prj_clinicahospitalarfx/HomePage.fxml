@@ -39,7 +39,8 @@
          <children>
             <Button layoutX="135.0" layoutY="153.0" mnemonicParsing="false" onAction="#generateJSON" text="EXPORTAR JSON" />
             <Button layoutX="352.0" layoutY="156.0" mnemonicParsing="false" onAction="#importJSON" text="IMPORTAR JSON" />
-            <Button layoutX="256.0" layoutY="264.0" mnemonicParsing="false" onAction="#generateXML" text="exportar xml" />
+            <Button layoutX="193.0" layoutY="256.0" mnemonicParsing="false" onAction="#generateXML" text="exportar xml" />
+            <Button layoutX="390.0" layoutY="270.0" mnemonicParsing="false" onAction="#importXML" text="importar xml" />
          </children></AnchorPane>
    </children>
 </VBox>

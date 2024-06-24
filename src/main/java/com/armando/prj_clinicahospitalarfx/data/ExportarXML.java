@@ -1,41 +1,52 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package com.armando.prj_clinicahospitalarfx.data;
 
-import static com.armando.prj_clinicahospitalarfx.HomePageController.medicos;
-import static com.armando.prj_clinicahospitalarfx.HomePageController.pacientes;
+import com.armando.prj_clinicahospitalarfx.HomePageController;
+import com.armando.prj_clinicahospitalarfx.model.ConsultaMedica;
+import com.armando.prj_clinicahospitalarfx.model.Enfermeiro;
 import com.armando.prj_clinicahospitalarfx.model.Medico;
 import com.armando.prj_clinicahospitalarfx.model.Paciente;
-import com.thoughtworks.xstream.XStream;
-import java.io.File;
+import com.armando.prj_clinicahospitalarfx.model.XMLCombine;
+import com.armando.prj_clinicahospitalarfx.model.XMLConsultas;
+import com.armando.prj_clinicahospitalarfx.model.XMLEnfermeiros;
+import com.armando.prj_clinicahospitalarfx.model.XMLMedicos;
+import com.armando.prj_clinicahospitalarfx.model.XMLPacientes;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.io.StringWriter;
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
 import javax.xml.bind.Marshaller;
 import javax.xml.bind.PropertyException;
-import org.apache.xmlbeans.ObjectFactory;
 
 public class ExportarXML {
 
     public static void exportarXML() throws PropertyException, JAXBException, IOException {
-        XStream xstream = new XStream();
+        try {
 
-        // Alias the Paciente class to a desired name (optional)
-        xstream.alias("paciente", Paciente.class);
-        String xmlPac = xstream.toXML(pacientes);
+            JAXBContext jaxbContextDados = JAXBContext.newInstance(XMLCombine.class);
+            Marshaller marshallerConsulta = jaxbContextDados.createMarshaller();
+            marshallerConsulta.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
+            FileWriter fDados = new FileWriter("C:\\Users\\Armando\\Desktop\\teste.xml");
+            ConsultaMedica[] consultas = new ConsultaMedica[HomePageController.consultas.size()];
+            for (int i = 0; i < HomePageController.consultas.size(); i++) {
+                consultas[i] = HomePageController.consultas.get(i);
+            }
+            Enfermeiro[] enfermeiros = new Enfermeiro[HomePageController.enfermeiros.size()];
+            for (int i = 0; i < HomePageController.enfermeiros.size(); i++) {
+                enfermeiros[i] = HomePageController.enfermeiros.get(i);
+            }
+            Medico[] medicos = new Medico[HomePageController.medicos.size()];
+            for (int i = 0; i < HomePageController.medicos.size(); i++) {
+                medicos[i] = HomePageController.medicos.get(i);
+            }
+            Paciente[] pacientes = new Paciente[HomePageController.pacientes.size()];
+            for (int i = 0; i < HomePageController.pacientes.size(); i++) {
+                pacientes[i] = HomePageController.pacientes.get(i);
+            }
+            XMLCombine dadosXML = new XMLCombine(pacientes, medicos, consultas, enfermeiros);
+            marshallerConsulta.marshal(dadosXML, fDados);
 
-        xstream.alias("medico", Medico.class);
-        String xmlMed = xstream.toXML(medicos);
-        
-        String xmlString = xmlPac+xmlMed;
-
-        FileWriter fileWriter = new FileWriter("C:\\Users\\Armando\\Desktop\\teste.xml");
-        fileWriter.write(xmlString);
-        fileWriter.close();
-
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }
