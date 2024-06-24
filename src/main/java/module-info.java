@@ -8,9 +8,13 @@ module com.armando.prj_clinicahospitalarfx {
     requires org.apache.poi.poi;
     requires org.apache.poi.ooxml;
     requires org.json;
-    requires com.fasterxml.jackson.annotation;
-    requires com.fasterxml.jackson.core;
-    requires com.fasterxml.jackson.databind;
-    requires com.google.gson;
-      
+    requires java.xml;
+    requires java.xml.bind;
+    requires java.xml.crypto;
+    requires io.github.xstream.mxparser;
+    requires xstream;
+    requires xmlpull;
+    opens com.armando.prj_clinicahospitalarfx.model to xstream;
+
+    
 }

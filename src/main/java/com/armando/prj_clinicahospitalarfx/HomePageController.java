@@ -1,6 +1,7 @@
 package com.armando.prj_clinicahospitalarfx;
 
 import com.armando.prj_clinicahospitalarfx.data.ExportarJSON;
+import com.armando.prj_clinicahospitalarfx.data.ExportarXML;
 import com.armando.prj_clinicahospitalarfx.data.ImportarJSON;
 import com.armando.prj_clinicahospitalarfx.model.ConsultaMedica;
 import com.armando.prj_clinicahospitalarfx.model.Enfermeiro;
@@ -15,6 +16,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.MenuItem;
 import javafx.scene.layout.AnchorPane;
+import javax.xml.bind.JAXBException;
 
 public class HomePageController implements Initializable {
 
@@ -58,6 +60,12 @@ public class HomePageController implements Initializable {
     private void importJSON() throws IOException, ParseException {
         ImportarJSON i1 = new ImportarJSON();
         i1.importarJSON();
+    }
+
+    @FXML
+    private void generateXML() throws IOException, ParseException, JAXBException {
+        ExportarXML e1 = new ExportarXML();
+        e1.exportarXML();
     }
 
     public static ArrayList<Medico> medicos = new ArrayList<Medico>();

@@ -6,11 +6,13 @@ package com.armando.prj_clinicahospitalarfx.model;
 
 import java.util.ArrayList;
 import java.util.Date;
+import javax.xml.bind.annotation.XmlRootElement;
 
 /**
  *
  * @author Armando
  */
+@XmlRootElement(name = "medico")
 public class Medico extends AtendenteHospitalar {
 
     @Override
