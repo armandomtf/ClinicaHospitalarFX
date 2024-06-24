@@ -1,11 +1,14 @@
 package com.armando.prj_clinicahospitalarfx;
 
+import com.armando.prj_clinicahospitalarfx.data.ExportarJSON;
+import com.armando.prj_clinicahospitalarfx.data.ImportarJSON;
 import com.armando.prj_clinicahospitalarfx.model.ConsultaMedica;
 import com.armando.prj_clinicahospitalarfx.model.Enfermeiro;
 import com.armando.prj_clinicahospitalarfx.model.Medico;
 import com.armando.prj_clinicahospitalarfx.model.Paciente;
 import java.io.IOException;
 import java.net.URL;
+import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 import javafx.fxml.FXML;
@@ -43,6 +46,18 @@ public class HomePageController implements Initializable {
     @FXML
     private void switchToExcel() throws IOException {
         App.setRoot("Excel");
+    }
+
+    @FXML
+    private void generateJSON() throws IOException {
+        ExportarJSON e1 = new ExportarJSON();
+        e1.exportarJSON();
+    }
+
+    @FXML
+    private void importJSON() throws IOException, ParseException {
+        ImportarJSON i1 = new ImportarJSON();
+        i1.importarJSON();
     }
 
     public static ArrayList<Medico> medicos = new ArrayList<Medico>();

@@ -1,17 +1,11 @@
 package com.armando.prj_clinicahospitalarfx;
 
 import com.armando.prj_clinicahospitalarfx.model.ConsultaMedica;
-import com.armando.prj_clinicahospitalarfx.model.ContatoTelEmail;
-import com.armando.prj_clinicahospitalarfx.model.Endereco;
-import com.armando.prj_clinicahospitalarfx.model.Enfermeiro;
-import com.armando.prj_clinicahospitalarfx.model.Genero;
 import com.armando.prj_clinicahospitalarfx.model.Medico;
 import com.armando.prj_clinicahospitalarfx.model.Paciente;
 import java.io.IOException;
 import java.net.URL;
-import java.time.ZoneOffset;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.ResourceBundle;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
