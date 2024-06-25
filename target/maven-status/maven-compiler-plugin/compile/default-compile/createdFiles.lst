@@ -14,7 +14,7 @@ com\armando\prj_clinicahospitalarfx\HomePageController.class
 com\armando\prj_clinicahospitalarfx\model\XMLCombine.class
 com\armando\prj_clinicahospitalarfx\model\ConsultaMedica.class
 com\armando\prj_clinicahospitalarfx\data\ImportarXML.class
-com\armando\prj_clinicahospitalarfx\ExcelController.class
+com\armando\prj_clinicahospitalarfx\ImportarExportarController.class
 com\armando\prj_clinicahospitalarfx\model\XMLConsultas.class
 com\armando\prj_clinicahospitalarfx\model\XMLEnfermeiros.class
 com\armando\prj_clinicahospitalarfx\model\XMLPacientes.class

@@ -13,6 +13,7 @@ import static com.armando.prj_clinicahospitalarfx.HomePageController.consultas;
 import static com.armando.prj_clinicahospitalarfx.HomePageController.enfermeiros;
 import static com.armando.prj_clinicahospitalarfx.HomePageController.medicos;
 import static com.armando.prj_clinicahospitalarfx.HomePageController.pacientes;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import javafx.scene.control.Alert;
@@ -22,16 +23,17 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 public class ImportarExcel {
 
-    public void ReadDataFromExcel(String path) {
-
+    public void importarExcel(String path) throws IOException, Exception {
+        
+        //zera as arraylists de controle
         HomePageController.pacientes = new ArrayList<>();
         HomePageController.medicos = new ArrayList<>();
         HomePageController.enfermeiros = new ArrayList<>();
         HomePageController.consultas = new ArrayList<>();
 
         try {
-            //XSSFWorkbook workbook = new XSSFWorkbook(path);
-            XSSFWorkbook workbook = new XSSFWorkbook("C:\\Users\\Armando\\Desktop\\Video.xlsx");
+            //abre a planilha
+            XSSFWorkbook workbook = new XSSFWorkbook(path);
 
             //Abre aba Pacientes
             Sheet sheet = workbook.getSheetAt(0);
@@ -125,8 +127,19 @@ public class ImportarExcel {
             exibirMsgInfo(path);
         } catch (Exception e) {
             e.printStackTrace();
+            exibirMsgErroNull(e.getMessage());
         }
 
+    }
+
+    private void exibirMsgErroNull(String s) throws IOException {
+        //função para exibir popup de alerta de exceção
+        Alert msg_erro = new Alert(Alert.AlertType.ERROR);
+        msg_erro.setTitle("Reportando Erro");
+        msg_erro.setHeaderText("Favor preencher os controles corretamente");
+        msg_erro.setContentText("Erro: " + s);
+        //msg_erro.setContentText("Tente novamente!");
+        msg_erro.showAndWait();
     }
 
     private void exibirMsgInfo(String msg) {
@@ -136,6 +149,7 @@ public class ImportarExcel {
         msg_alerta.setHeaderText("Operação realizada com sucesso!");
         msg_alerta.setContentText("Arquivo: " + msg);
         msg_alerta.showAndWait();
+        
     }
 
 }

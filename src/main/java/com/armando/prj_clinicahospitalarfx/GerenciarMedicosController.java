@@ -29,10 +29,12 @@ public class GerenciarMedicosController implements Initializable {
 
     @FXML
     private void switchToHomePage() throws IOException {
+        //redireciona para a homepage
         App.setRoot("HomePage");
     }
 
     private void preencherCombobox() {
+        //função para preencher a combobox com os médicos cadastrados
         cmbMedicos.getItems().removeAll(cmbMedicos.getItems());
         for (int i = 0; i < HomePageController.medicos.size(); i++) {
             cmbMedicos.getItems().add(HomePageController.medicos.get(i));
@@ -101,6 +103,8 @@ public class GerenciarMedicosController implements Initializable {
 
     @FXML
     private void cadastrarMedico() throws IOException {
+        //função para cadastrar novo médico
+
         ArrayList<String> especialidades = new ArrayList<String>();
         try {
             boolean cirurgiao = false;
@@ -135,13 +139,15 @@ public class GerenciarMedicosController implements Initializable {
             preencherCombobox();
             clearFieldsCadastrar();
         } catch (Exception e) {
-            //JOptionPane.showMessageDialog(null, "Erro: " + e.getMessage() + " favor preencher corretamente os dados!");
+
             exibirMsgErroNull(e.getMessage());
         }
     }
 
     @FXML
     private void salvarMedico() throws IOException {
+        //função para salvar novos dados adicionados ao médico
+        
         int index = cmbMedicos.getSelectionModel().getSelectedIndex();
 
         try {
@@ -177,13 +183,15 @@ public class GerenciarMedicosController implements Initializable {
             preencherCombobox();
             clearFieldsAlterar();
         } catch (Exception e) {
-            //javax.swing.JOptionPane.showMessageDialog(null, "Erro: " + e.getMessage() + " favor preencher corretamente os dados!");
+            
             exibirMsgErroNull(e.getMessage());
         }
     }
 
     @FXML
     private void deletarMedico() throws IOException {
+        //função para remover um médico
+        
         int index = cmbMedicos.getSelectionModel().getSelectedIndex();
 
         try {
@@ -193,12 +201,13 @@ public class GerenciarMedicosController implements Initializable {
             clearFieldsAlterar();
         } catch (Exception e) {
             exibirMsgErroNull(e.getMessage());
-            //javax.swing.JOptionPane.showMessageDialog(null, "Erro: " + e.getMessage() + " tente novamente.");
         }
     }
 
     @FXML
     private void onChangeCombo() throws IOException {
+         //função para preencher os campos de acordo com o paciente seleiconado na combobox
+        
         clearFieldsAlterar();
         int index = cmbMedicos.getSelectionModel().getSelectedIndex();
 
@@ -214,7 +223,7 @@ public class GerenciarMedicosController implements Initializable {
         txtRua.setText(HomePageController.medicos.get(index).getEndereco().getRua());
         txtTelefone.setText(HomePageController.medicos.get(index).getContato().getTelefone());
         dtNascimento.setValue(HomePageController.medicos.get(index).getDataNascimento().toInstant().atZone(ZoneOffset.UTC).toLocalDate());
-        
+
         if (HomePageController.medicos.get(index).getGenero() == Genero.masculino) {
             rdMasc.setSelected(true);
             rdFem.setSelected(false);
@@ -262,6 +271,7 @@ public class GerenciarMedicosController implements Initializable {
 
     @FXML
     private void clearFieldsAlterar() throws IOException {
+        //função para limpar os campos de alteração
         txtNome.setText("");
         dtNascimento.setValue(null);
         rdMasc.setSelected(false);
@@ -292,6 +302,7 @@ public class GerenciarMedicosController implements Initializable {
 
     @FXML
     private void clearFieldsCadastrar() throws IOException {
+        //função para limpar os campos de cadastro
         txtNome1.setText("");
         dtNascimento1.setValue(null);
         rdMasc1.setSelected(false);

@@ -31,6 +31,7 @@ public class GerenciarEnfermeirosController implements Initializable {
     }
 
     private void preencherCombobox() {
+        //preenche o combobox com os enfermeiros cadastrados
         cmbEnfermeiros.getItems().removeAll(cmbEnfermeiros.getItems());
         for (int i = 0; i < HomePageController.enfermeiros.size(); i++) {
             cmbEnfermeiros.getItems().add(HomePageController.enfermeiros.get(i));
@@ -39,6 +40,8 @@ public class GerenciarEnfermeirosController implements Initializable {
 
     @FXML
     private void cadastrarEnfermeiro() throws IOException {
+        //cadastra um novo enfermeiro
+
         try {
             boolean oprx = false;
             Genero genero;
@@ -71,13 +74,15 @@ public class GerenciarEnfermeirosController implements Initializable {
             preencherCombobox();
             clearFieldsCadastrar();
         } catch (Exception e) {
-            //JOptionPane.showMessageDialog(null, "Erro: " + e.getMessage() + " favor preencher corretamente os dados!");
+
             exibirMsgErroNull(e.getMessage());
         }
     }
 
     @FXML
     private void salvarEnfermeiro() throws IOException {
+        //função para salvar novos dados inseridos no enfermeiro
+        
         int index = cmbEnfermeiros.getSelectionModel().getSelectedIndex();
 
         try {
@@ -109,13 +114,14 @@ public class GerenciarEnfermeirosController implements Initializable {
             preencherCombobox();
             clearFieldsAlterar();
         } catch (Exception e) {
-            //javax.swing.JOptionPane.showMessageDialog(null, "Erro: " + e.getMessage() + " favor preencher corretamente os dados!");
             exibirMsgErroNull(e.getMessage());
         }
     }
 
     @FXML
     private void deletarEnfermeiro() throws IOException {
+        //deleta um enfermeiro
+        
         int index = cmbEnfermeiros.getSelectionModel().getSelectedIndex();
 
         try {
@@ -125,12 +131,13 @@ public class GerenciarEnfermeirosController implements Initializable {
             clearFieldsAlterar();
         } catch (Exception e) {
             exibirMsgErroNull(e.getMessage());
-            //javax.swing.JOptionPane.showMessageDialog(null, "Erro: " + e.getMessage() + " tente novamente.");
         }
     }
 
     @FXML
     private void onChangeCombo() throws IOException {
+         //função para preencher os campos de acordo com o enfermeiro seleiconado na combobox
+        
         clearFieldsAlterar();
         int index = cmbEnfermeiros.getSelectionModel().getSelectedIndex();
 
@@ -168,6 +175,7 @@ public class GerenciarEnfermeirosController implements Initializable {
 
     @FXML
     private void clearFieldsAlterar() throws IOException {
+        //função para limpar os campos de alteração
         txtNome.setText("");
         dtNascimento.setValue(null);
         rdMasc.setSelected(false);
@@ -189,6 +197,7 @@ public class GerenciarEnfermeirosController implements Initializable {
 
     @FXML
     private void clearFieldsCadastrar() throws IOException {
+        //função para limpar os campos de cadastro
         txtNome1.setText("");
         dtNascimento1.setValue(null);
         rdMasc1.setSelected(false);

@@ -7,10 +7,7 @@ package com.armando.prj_clinicahospitalarfx.model;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 
-/**
- *
- * @author Armando
- */
+//classe de parse xml para pacientes
 @XmlRootElement(name = "pacientes")
 public class XMLPacientes {
 

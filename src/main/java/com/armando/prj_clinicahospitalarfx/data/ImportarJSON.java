@@ -26,11 +26,13 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Date;
+import javafx.scene.control.Alert;
 
 public class ImportarJSON {
 
-    public static void importarJSON() throws IOException, ParseException {
+    public void importarJSON(String path) throws IOException, ParseException {
 
+        //zera as arraylists de controle    
         HomePageController.pacientes = new ArrayList<>();
         HomePageController.medicos = new ArrayList<>();
         HomePageController.enfermeiros = new ArrayList<>();
@@ -38,17 +40,15 @@ public class ImportarJSON {
 
         try {
 
-            String filePath = "C:\\Users\\Armando\\Desktop\\teste.json";
+            // cria o objeto JSON com o arquivo inputado
+            JSONObject dataObject = new JSONObject(readFile(path));
 
-            // Create a JSONObject to hold the parsed data
-            JSONObject dataObject = new JSONObject(readFile(filePath));
-
-            // Get the JSONArray of pacientes
+            // pegando o JSON de pacientes
             JSONArray pacientesArray = dataObject.getJSONArray("pacientes");
 
             SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
 
-            // Loop through pacientesArray and convert them to Paciente objects
+            // percorre cada paciente no JSON e instancia objetos correspondentes
             for (int i = 0; i < pacientesArray.length(); i++) {
                 JSONObject pacienteObject = pacientesArray.getJSONObject(i);
 
@@ -68,10 +68,10 @@ public class ImportarJSON {
                 pacientes.add(paciente);
             }
 
-            // Get the JSONArray of medicos
+            // instancia de medico
             JSONArray medicosArray = dataObject.getJSONArray("medicos");
 
-            // Loop through medicosArray and convert them to Medico objects
+            // percorre cada medico no JSON e instancia objetos correspondentes
             for (int i = 0; i < medicosArray.length(); i++) {
                 JSONObject medicoObject = medicosArray.getJSONObject(i);
 
@@ -99,10 +99,10 @@ public class ImportarJSON {
                 medicos.add(medico);
             }
 
-            // Get the JSONArray of enfermeiros
+            //instancia de enfermeiros
             JSONArray enfermeirosArray = dataObject.getJSONArray("enfermeiros");
 
-            // Loop through enfermeiros and convert them to Medico objects
+            // percorre cada enfermeiro no JSON e instancia objetos correspondentes
             for (int i = 0; i < enfermeirosArray.length(); i++) {
                 JSONObject enfermeiroObject = enfermeirosArray.getJSONObject(i);
 
@@ -124,10 +124,10 @@ public class ImportarJSON {
 
             }
 
-            // Get the JSONArray of enfermeiros
+            //instancia de consultas
             JSONArray consultasArray = dataObject.getJSONArray("consultas");
 
-            // Loop through enfermeiros and convert them to Medico objects
+            // percorre cada paciente no JSON e instancia objetos correspondentes
             for (int i = 0; i < consultasArray.length(); i++) {
                 JSONObject consultaObject = consultasArray.getJSONObject(i);
 
@@ -151,9 +151,11 @@ public class ImportarJSON {
                 }
 
             }
+            exibirMsgInfo(path);
 
         } catch (Exception e) {
             e.printStackTrace();
+            exibirMsgErroNull(e.getMessage());
         }
     }
 
@@ -166,5 +168,25 @@ public class ImportarJSON {
             }
         }
         return sb.toString();
+    }
+
+    private void exibirMsgErroNull(String s) throws IOException {
+        //função para exibir popup de alerta de exceção
+        Alert msg_erro = new Alert(Alert.AlertType.ERROR);
+        msg_erro.setTitle("Reportando Erro");
+        msg_erro.setHeaderText("Favor preencher os controles corretamente");
+        msg_erro.setContentText("Erro: " + s);
+        //msg_erro.setContentText("Tente novamente!");
+        msg_erro.showAndWait();
+    }
+
+    private void exibirMsgInfo(String msg) {
+        //função para exibir popup informando o resultado da operação
+        Alert msg_alerta = new Alert(Alert.AlertType.INFORMATION);
+        msg_alerta.setTitle("Informação");
+        msg_alerta.setHeaderText("Operação realizada com sucesso!");
+        msg_alerta.setContentText("Arquivo: " + msg);
+        msg_alerta.showAndWait();
+
     }
 }

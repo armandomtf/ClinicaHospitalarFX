@@ -1,107 +1,58 @@
 package com.armando.prj_clinicahospitalarfx;
 
-import com.armando.prj_clinicahospitalarfx.data.ExportarJSON;
-import com.armando.prj_clinicahospitalarfx.data.ExportarXML;
-import com.armando.prj_clinicahospitalarfx.data.ImportarJSON;
-import com.armando.prj_clinicahospitalarfx.data.ImportarXML;
 import com.armando.prj_clinicahospitalarfx.model.ConsultaMedica;
 import com.armando.prj_clinicahospitalarfx.model.Enfermeiro;
 import com.armando.prj_clinicahospitalarfx.model.Medico;
 import com.armando.prj_clinicahospitalarfx.model.Paciente;
 import java.io.IOException;
 import java.net.URL;
-import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.MenuItem;
-import javafx.scene.layout.AnchorPane;
-import javax.xml.bind.JAXBException;
-import javax.xml.bind.PropertyException;
 
 public class HomePageController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+       
     }
 
     @FXML
     private void switchToPacientes() throws IOException {
+        //redirecionamento para pagina de pacientes
         App.setRoot("GerenciarPacientes");
     }
 
     @FXML
     private void switchToMedicos() throws IOException {
+        //redirecionamento para pagina de medicos
         App.setRoot("GerenciarMedicos");
     }
 
     @FXML
     private void switchToEnfermeiros() throws IOException {
+        //redirecionamento para pagina de enfermeiros
         App.setRoot("GerenciarEnfermeiros");
     }
 
     @FXML
     private void switchToConsultas() throws IOException {
+        //redirecionamento para pagina de consultas
         App.setRoot("GerenciarConsultas");
     }
 
     @FXML
-    private void switchToExcel() throws IOException {
-        App.setRoot("Excel");
+    private void switchToDados() throws IOException {
+        //redirecionamento para pagina de dados
+        App.setRoot("ImportarExportar");
     }
 
-    @FXML
-    private void generateJSON() throws IOException {
-        ExportarJSON e1 = new ExportarJSON();
-        e1.exportarJSON();
-    }
-
-    @FXML
-    private void importJSON() throws IOException, ParseException {
-        ImportarJSON i1 = new ImportarJSON();
-        i1.importarJSON();
-    }
-
-    @FXML
-    private void generateXML() throws JAXBException, PropertyException, IOException{
-        ExportarXML e1 = new ExportarXML();
-        e1.exportarXML();
-    }
-
-    @FXML
-    private void importXML() {
-        ImportarXML i1 = new ImportarXML();
-        i1.importarXML();
-    }
-
+    //instancia das arrays de controles
     public static ArrayList<Medico> medicos = new ArrayList<Medico>();
     public static ArrayList<Enfermeiro> enfermeiros = new ArrayList<Enfermeiro>();
     public static ArrayList<Paciente> pacientes = new ArrayList<Paciente>();
     public static ArrayList<ConsultaMedica> consultas = new ArrayList<ConsultaMedica>();
-
-    @FXML
-    MenuItem menuItemGerenciarPacientes;
-    @FXML
-    MenuItem menuItemGerenciarMedicos;
-    @FXML
-    MenuItem menuItemGerenciarEnfermeiros;
-    @FXML
-    MenuItem menuItemGerenciarConsultas;
-    @FXML
-    MenuItem menuItemImportarExcel;
-    @FXML
-    MenuItem menuItemImportarXML;
-    @FXML
-    MenuItem menuItemImportarJSON;
-    @FXML
-    MenuItem menuItemExportarExcel;
-    @FXML
-    MenuItem menuItemExportarXML;
-    @FXML
-    MenuItem menuItemExportarJSON;
-    @FXML
-    AnchorPane AnchorPane;
-
+ 
 }
+

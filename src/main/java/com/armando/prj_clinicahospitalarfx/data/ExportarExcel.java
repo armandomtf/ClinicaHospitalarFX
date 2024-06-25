@@ -16,7 +16,7 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 public class ExportarExcel {
 
-    public void writeToExcelSheet(String nomeArq, String caminhoArq) {
+    public void exportarExcel(String nomeArq, String caminhoArq) throws IOException {
         //Instancia da planilha
         XSSFWorkbook workbook = new XSSFWorkbook();
 
@@ -151,28 +151,39 @@ public class ExportarExcel {
 
         try {
             //Salvando no caminho e com o nome digitado pelo usuário
-            //out = new FileOutputStream(new File(caminhoArq + nomeArq + ".xlsx"));
-            out = new FileOutputStream(new File("C:\\Users\\Armando\\Desktop\\Video2.xlsx"));
-    
+            out = new FileOutputStream(new File(caminhoArq + nomeArq + ".xlsx"));
 
             workbook.write(out);
             out.close();
         } catch (FileNotFoundException e) {
             e.printStackTrace();
+            exibirMsgErroNull(e.getMessage());
         } catch (IOException e) {
             e.printStackTrace();
+            exibirMsgErroNull(e.getMessage());
         }
 
-        exibirMsgInfo(nomeArq);
+        exibirMsgInfo(nomeArq+".xlsx");
 
     }
 
-    private void exibirMsgInfo(String msg){
+    private void exibirMsgErroNull(String s) throws IOException {
+        //função para exibir popup de alerta de exceção
+        Alert msg_erro = new Alert(Alert.AlertType.ERROR);
+        msg_erro.setTitle("Reportando Erro");
+        msg_erro.setHeaderText("Favor preencher os controles corretamente");
+        msg_erro.setContentText("Erro: " + s);
+        //msg_erro.setContentText("Tente novamente!");
+        msg_erro.showAndWait();
+    }
+
+    private void exibirMsgInfo(String msg) {
         //função para exibir popup informando o resultado da operação
         Alert msg_alerta = new Alert(Alert.AlertType.INFORMATION);
         msg_alerta.setTitle("Informação");
         msg_alerta.setHeaderText("Operação realizada com sucesso!");
         msg_alerta.setContentText("Arquivo: " + msg);
         msg_alerta.showAndWait();
+
     }
 }

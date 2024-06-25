@@ -2,6 +2,8 @@ package com.armando.prj_clinicahospitalarfx.model;
 
 import javax.xml.bind.annotation.XmlRootElement;
 
+
+//classe auxiliar para transformar em xml combinando as 4 classes no mesmo arquivo
 @XmlRootElement(name = "dados")
 public class XMLCombine {
     

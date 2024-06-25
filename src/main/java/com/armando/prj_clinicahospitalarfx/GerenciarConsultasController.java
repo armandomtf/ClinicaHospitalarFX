@@ -30,6 +30,7 @@ public class GerenciarConsultasController implements Initializable {
     }
 
     private void preencherComboConsultas() {
+        //preenche combobox de consultas
         cmbConsultas.getItems().removeAll(cmbConsultas.getItems());
         for (int i = 0; i < HomePageController.consultas.size(); i++) {
             cmbConsultas.getItems().add(HomePageController.consultas.get(i));
@@ -37,6 +38,7 @@ public class GerenciarConsultasController implements Initializable {
     }
 
     private void preencherComboPacientes() {
+        //preenche as comboboxes de pacientes
         cmbPacientes.getItems().removeAll(cmbPacientes.getItems());
         for (int i = 0; i < HomePageController.pacientes.size(); i++) {
             cmbPacientes.getItems().add(HomePageController.pacientes.get(i));
@@ -49,6 +51,7 @@ public class GerenciarConsultasController implements Initializable {
     }
 
     private void preencherComboMedicos() {
+        //preenche as comboboxes de medicos
         cmbMedicos.getItems().removeAll(cmbMedicos.getItems());
         for (int i = 0; i < HomePageController.medicos.size(); i++) {
             cmbMedicos.getItems().add(HomePageController.medicos.get(i));
@@ -62,6 +65,8 @@ public class GerenciarConsultasController implements Initializable {
 
     @FXML
     private void cadastrarConsulta() throws IOException {
+        //cadastra uma consulta
+        
         int pacIndex = cmbPacientes1.getSelectionModel().getSelectedIndex();
         int medIndex = cmbMedicos1.getSelectionModel().getSelectedIndex();
 
@@ -91,13 +96,14 @@ public class GerenciarConsultasController implements Initializable {
             preencherComboConsultas();
             clearFieldsCadastrar();
         } catch (Exception e) {
-            //JOptionPane.showMessageDialog(null, "Erro: " + e.getMessage() + " favor preencher corretamente os dados!");
             exibirMsgErroNull(e.getMessage());
         }
     }
 
     @FXML
     private void salvarConsulta() throws IOException {
+        //salva uma consulta com os novos dados
+        
         int consIndex = cmbConsultas.getSelectionModel().getSelectedIndex();
         int pacId = cmbPacientes.getSelectionModel().getSelectedIndex() + 1;
         int medId = cmbMedicos.getSelectionModel().getSelectedIndex() + 1;
@@ -132,13 +138,14 @@ public class GerenciarConsultasController implements Initializable {
             preencherComboConsultas();
             clearFieldsAlterar();
         } catch (Exception e) {
-            //javax.swing.JOptionPane.showMessageDialog(null, "Erro: " + e.getMessage() + " favor preencher corretamente os dados!");
             exibirMsgErroNull(e.getMessage());
         }
     }
 
     @FXML
     private void deletarConsulta() throws IOException {
+        //deleta uma consulta
+        
         int pacIndex = cmbPacientes.getSelectionModel().getSelectedIndex();
         int consIndex = cmbConsultas.getSelectionModel().getSelectedIndex();
 
@@ -151,12 +158,13 @@ public class GerenciarConsultasController implements Initializable {
             clearFieldsAlterar();
         } catch (Exception e) {
             exibirMsgErroNull(e.getMessage());
-            //javax.swing.JOptionPane.showMessageDialog(null, "Erro: " + e.getMessage() + " tente novamente.");
         }
     }
 
     @FXML
     private void onChangeCombo() throws IOException {
+         //função para preencher os campos de acordo com a consulta seleiconada na combobox
+        
         clearFieldsAlterar();
 
         int consIndex = cmbConsultas.getSelectionModel().getSelectedIndex();
@@ -180,6 +188,7 @@ public class GerenciarConsultasController implements Initializable {
 
     @FXML
     private void clearFieldsAlterar() throws IOException {
+        //função para limpar os campos de alteração
         rdSim.setSelected(false);
         rdNao.setSelected(false);
         txtQueixa.setText("");
@@ -191,6 +200,7 @@ public class GerenciarConsultasController implements Initializable {
 
     @FXML
     private void clearFieldsCadastrar() throws IOException {
+        //função para limpar os campos de cadastro
         rdSim1.setSelected(false);
         rdNao1.setSelected(false);
         txtQueixa1.setText("");
